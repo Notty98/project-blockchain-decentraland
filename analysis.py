@@ -5,6 +5,12 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv('./DCL_summary.csv')
 
+df.drop('is_road',inplace=True,axis=1)
+df.drop('is_plaza',inplace=True,axis=1)
+df.drop('x',inplace=True,axis=1)
+df.drop('y',inplace=True,axis=1)
+
+
 corr_spearman = df.corr(method='spearman')
 corr_pearson = df.corr(method='pearson')
 corr_kendall = df.corr(method='kendall')
