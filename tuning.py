@@ -7,7 +7,7 @@ import numpy as np
 raw_data = pd.read_csv('./DCL_summary.csv')
 
 # create a matrix with only the column that have a positive correlation with the price (see analysis.py)
-X = raw_data.loc[:, ['transactions', 'ETH', 'ETH_7d', 'COIN', 'COIN_7d', 'google', 'tweet_meta', 'tweet_pojo']]
+X = raw_data.loc[:, ['transactions','ETH','ETH_7d','COIN_7d', 'tweet_meta', 'tweet_pojo', 'x','y','estate_size','traffic_cum_sum']]
 y = raw_data.loc[:, ['price_usd']] # Target variable
 
 
@@ -41,13 +41,11 @@ domain_params_dicts = {
 
     'n_estimators': [50, 100, 150],
 
-    'max_depth': [10, 100, 150],
+    'max_depth': [3, 5, 9],
 
     'min_child_weight': [0.001, 0.1, 1],
 
     'gamma': [0.01, 0.1, 0.5],
-
-    'n_estimators': [10, 50, 100],
 
     'subsample': [i/10 for i in range(4,10)],
 
