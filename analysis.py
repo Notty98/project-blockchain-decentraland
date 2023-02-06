@@ -5,10 +5,12 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv('./DCL_summary.csv')
 
-df.drop('is_road',inplace=True,axis=1)
-df.drop('is_plaza',inplace=True,axis=1)
-df.drop('x',inplace=True,axis=1)
-df.drop('y',inplace=True,axis=1)
+# remove the features that cannot be used in the correlation analysis
+df.drop('is_road', inplace=True, axis=1)
+df.drop('is_plaza', inplace=True, axis=1)
+df.drop('estate_size', inplace=True, axis=1)
+df.drop('x', inplace=True, axis=1)
+df.drop('y', inplace=True, axis=1)
 
 
 corr_spearman = df.corr(method='spearman')
@@ -24,8 +26,8 @@ ax2.set_title('pearson')
 ax3.set_title('kendall')
 
 # create a heatmap for each correlation method
-im1 = sns.heatmap(corr_spearman, xticklabels=corr_spearman.columns, yticklabels=corr_spearman.columns, cmap='RdBu', ax=ax1)
-im2 = sns.heatmap(corr_pearson, xticklabels=corr_pearson.columns, yticklabels=corr_pearson.columns, cmap='RdBu', ax=ax2)
-im3 = sns.heatmap(corr_kendall, xticklabels=corr_kendall.columns, yticklabels=corr_kendall.columns, cmap='RdBu', ax=ax3)
+im1 = sns.heatmap(corr_spearman, xticklabels=corr_spearman.columns, yticklabels=corr_spearman.columns, cmap='RdBu_r', ax=ax1)
+im2 = sns.heatmap(corr_pearson, xticklabels=corr_pearson.columns, yticklabels=corr_pearson.columns, cmap='RdBu_r', ax=ax2)
+im3 = sns.heatmap(corr_kendall, xticklabels=corr_kendall.columns, yticklabels=corr_kendall.columns, cmap='RdBu_r', ax=ax3)
 
 plt.show()
