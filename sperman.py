@@ -15,6 +15,8 @@ df.drop('y', inplace=True, axis=1)
 # create the spearmann correlation matrix
 corr_spearman = df.corr(method='spearman')
 
+sns.set(font_scale=1.5)
+
 # create a heatmap with the features name and the reversed color (Red with high correlation and Blue with low correlation)
 sns.heatmap(corr_spearman, xticklabels=corr_spearman.columns, yticklabels=corr_spearman.columns, cmap='RdBu_r')
 
