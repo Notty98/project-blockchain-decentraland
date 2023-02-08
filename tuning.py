@@ -7,8 +7,13 @@ import pandas as pd
 # load the dataset
 raw_data = pd.read_csv('./DCL_summary.csv')
 
+# remove the row that doesn't have traffic
+# for index, row in raw_data.iterrows():
+#     if row['traffic_avg'] == 0:
+#         raw_data.drop(index, axis=0, inplace=True)
+
 # create the set of features (X) that will be used to approximate the price_usd (y)
-X = raw_data.loc[:, ['transactions','x','y','is_road','is_plaza','estate_size','traffic_cum_sum','traffic_max','traffic_avg','ETH','ETH_7d','COIN','COIN_7d','google','tweet_meta','tweet_pojo']]
+X = raw_data.loc[:, ['transactions','x','y','estate_size','traffic_cum_sum','traffic_max','traffic_avg','ETH','ETH_7d','COIN','COIN_7d','google','tweet_meta','tweet_pojo']]
 y = raw_data.loc[:, ['price_usd']]
 
 
