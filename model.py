@@ -10,6 +10,9 @@ from sklearn.metrics import r2_score
 
 import matplotlib.pyplot as plt
 
+# update font size
+plt.rcParams.update({'font.size': 20})
+
 raw_data = pd.read_csv('./DCL_summary.csv')
 
 # create a matrix with the relevant features of the dataset
@@ -42,14 +45,14 @@ print("MAE : % f" %(mae))
 r2 = r2_score(y_test, y_pred)
 print("R2 : % f" %(r2))
 
-# Create a scatter plot of the predictions and the true values
+# Create a scatter plot of the approximations and the true values
 plt.scatter(y_test, y_pred)
 
-# Add a line for perfect prediction
+# Add a line for perfect approximation
 plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=4)
 
-plt.xlabel('True Values(USD)')
-plt.ylabel('Predictions(USD)')
-plt.title('XGBoost Predictions')
+plt.xlabel('True Values (USD)')
+plt.ylabel('Approximations (USD)')
+plt.title('XGBoost Approximation')
 
 plt.show()

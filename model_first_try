@@ -10,6 +10,9 @@ from sklearn.metrics import r2_score
 
 import matplotlib.pyplot as plt
 
+# update font size
+plt.rcParams.update({'font.size': 20})
+
 raw_data = pd.read_csv('./DCL_summary.csv')
 
 # create a matrix with the relevant features of the dataset
