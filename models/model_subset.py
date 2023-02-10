@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 # update font size
 plt.rcParams.update({'font.size': 20})
 
-raw_data = pd.read_csv('./DCL_summary.csv')
+raw_data = pd.read_csv('../dataset/DCL_summary.csv')
 
 #remove the row that doesn't have traffic
 for index, row in raw_data.iterrows():

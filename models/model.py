@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 # update font size
 plt.rcParams.update({'font.size': 20})
 
-raw_data = pd.read_csv('./DCL_summary.csv')
+raw_data = pd.read_csv('../dataset/DCL_summary.csv')
 
 # create a matrix with the relevant features of the dataset
 X = raw_data.loc[:, ['transactions','x','y','is_road','is_plaza','estate_size','traffic_cum_sum','traffic_max','traffic_avg','ETH','ETH_7d','COIN','COIN_7d','google','tweet_meta','tweet_pojo']]

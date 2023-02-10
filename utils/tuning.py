@@ -5,7 +5,7 @@ from sklearn.metrics import make_scorer, r2_score
 import pandas as pd
 
 # load the dataset
-raw_data = pd.read_csv('./DCL_summary.csv')
+raw_data = pd.read_csv('../dataset/DCL_summary.csv')
 
 # remove the row that doesn't have traffic
 # for index, row in raw_data.iterrows():
