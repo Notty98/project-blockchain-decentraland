@@ -5,6 +5,7 @@ The project is focused on the study of the Decentraland's metaverse, the goal is
 ## Requirements
 
 To run the application you need [python 3.x](https://www.python.org/).
+
 If you want to automatically install the required dependencies, it's required to install also [pip](https://pip.pypa.io/en/stable/cli/pip_install/).
 
 ## Installation of dependencies
@@ -21,6 +22,7 @@ The project has the following directory:
 * dataset: the files given that contains information of decentraland's transactions
 * models: the models used to approximate the price of NFTs
 * utils: the script that searches the best value for xgboost's parameters, in order to maximixe the r2 accuracy and minimize the mean absolute error
+* report: a pdf file of the report on work done
 
 ### Run the script
 
